@@ -1,8 +1,11 @@
 package com.frimil.frimilapi.pecuarista;
 
 
+import com.frimil.frimilapi.fazenda.Fazenda;
 import jakarta.persistence.*;
 import lombok.Data;
+
+import java.util.List;
 
 @Data
 @Entity
@@ -40,5 +43,8 @@ public class Pecuarista {
 
     @Column(name = "PCT_RG")
     private String rg;
+
+    @OneToMany(mappedBy = "pecuarista", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Fazenda> fazendas;
 
 }
