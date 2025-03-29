@@ -30,7 +30,7 @@ public class PecuaristaServico {
                 .collect(Collectors.toList());
     }
 
-    public PecuaristaDTO buscarPecuarista(Long id) {
+    public PecuaristaDTO buscar(Long id) {
         Pecuarista pecuarista = this.findOrThrow(id);
 
         return new PecuaristaDTO(pecuarista);

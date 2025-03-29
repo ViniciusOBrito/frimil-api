@@ -10,13 +10,13 @@ public class PesadorGado {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "PDG_ID", nullable = false)
-    private Integer id;
+    private Long id;
 
     @Column(name = "PDG_TIPO_DOCUMENTO", nullable = false)
     private Long tipoDocumento;
 
     @Column(name = "PDG_DOCUMENTO", nullable = false)
-    private Long documento;
+    private String documento;
 
     @Column(name = "PDG_NOME", nullable = false)
     private String nome;
