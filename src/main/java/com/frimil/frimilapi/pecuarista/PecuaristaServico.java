@@ -36,7 +36,7 @@ public class PecuaristaServico {
         return new PecuaristaDTO(pecuarista);
     }
 
-    public PecuaristaDTO editar(PecuaristaDTO pecuaristaDTO, Long id) {
+    public PecuaristaDTO atualizar(PecuaristaDTO pecuaristaDTO, Long id) {
         Pecuarista pecuarista = findOrThrow(id);
 
         BeanUtils.copyProperties(pecuaristaDTO, pecuarista);
