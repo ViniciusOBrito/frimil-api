@@ -1,5 +1,11 @@
 package com.frimil.frimilapi.pecuarista;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.frimil.frimilapi.fazenda.Fazenda;
+import com.frimil.frimilapi.fazenda.FazendaDTO;
+
+import java.util.List;
+
 public record PecuaristaDTO(
         Long id,
         Long sequencial,
@@ -10,7 +16,8 @@ public record PecuaristaDTO(
         String inscricaoEstadual,
         String endereco,
         String telefone,
-        String rg
+        String rg,
+        List<Fazenda> fazendas
 ) {
 
     public PecuaristaDTO(Pecuarista pecuarista) {
@@ -24,7 +31,8 @@ public record PecuaristaDTO(
                 pecuarista.getInscricaoEstadual(),
                 pecuarista.getEndereco(),
                 pecuarista.getTelefone(),
-                pecuarista.getRg()
+                pecuarista.getRg(),
+                pecuarista.getFazendas()
         );
     }
 }

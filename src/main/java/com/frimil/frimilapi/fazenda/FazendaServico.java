@@ -14,19 +14,13 @@ import java.util.stream.Collectors;
 public class FazendaServico {
 
     private final FazendaRepositorio fazendaRepositorio;
-    private final PecuaristaServico pecuaristaServico;
+
+    public Fazenda salvar(Fazenda fazenda){
+        return fazendaRepositorio.save(fazenda);
+    }
 
     public List<FazendaDTO> listar() {
         return fazendaRepositorio.findAll()
-                .stream()
-                .map(FazendaDTO::new)
-                .collect(Collectors.toList());
-    }
-
-
-    public List<FazendaDTO> listarPorPecuarista(Long idPecuarista) {
-        Pecuarista pecuarista = pecuaristaServico.findOrThrow(idPecuarista);
-        return fazendaRepositorio.findAllByPecuarista(pecuarista)
                 .stream()
                 .map(FazendaDTO::new)
                 .collect(Collectors.toList());
@@ -50,6 +44,4 @@ public class FazendaServico {
         return fazendaRepositorio.findById(id)
                 .orElseThrow(() -> new RuntimeException("Erro"));
     }
-
-
 }

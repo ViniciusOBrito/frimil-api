@@ -8,7 +8,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping(name = "/veiculo")
+@RequestMapping("/veiculo")
 public class VeiculoController {
 
     private final VeiculoServico veiculoServico;

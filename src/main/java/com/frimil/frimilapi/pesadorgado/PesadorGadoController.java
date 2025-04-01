@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping(name = "/pesador-gado")
+@RequestMapping("/pesador-gado")
 public class PesadorGadoController {
 
     private final PesadorGadoServico pesadorGadoServico;
@@ -24,8 +24,8 @@ public class PesadorGadoController {
         return ResponseEntity.ok(this.pesadorGadoServico.listar());
     }
 
-    @GetMapping
-    public ResponseEntity<PesadorGadoDTO> buscar(Long id) {
+    @GetMapping("/{id}")
+    public ResponseEntity<PesadorGadoDTO> buscar(@PathVariable Long id) {
         return ResponseEntity.ok(this.pesadorGadoServico.buscar(id));
     }
 

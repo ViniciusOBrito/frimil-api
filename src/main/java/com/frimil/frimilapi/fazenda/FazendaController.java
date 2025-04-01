@@ -9,7 +9,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping(name = "/fazenda")
+@RequestMapping("/fazenda")
 public class FazendaController {
 
     private final FazendaServico fazendaServico;
@@ -22,11 +22,6 @@ public class FazendaController {
     @GetMapping
     public ResponseEntity<List<FazendaDTO>> listar() {
         return ResponseEntity.ok(fazendaServico.listar());
-    }
-
-    @GetMapping("/{idPecuarista}")
-    public ResponseEntity<List<FazendaDTO>> listarPorPecuarista(@PathVariable Long idPecuarista) {
-        return ResponseEntity.ok(fazendaServico.listarPorPecuarista(idPecuarista));
     }
 
     @DeleteMapping

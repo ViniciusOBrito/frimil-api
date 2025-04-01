@@ -10,7 +10,7 @@ import java.util.List;
 
 @RestController
 @AllArgsConstructor
-@RequestMapping(name = "/transportador")
+@RequestMapping("/transportador")
 public class TransportadorController {
 
     private final TransportadorServico transportadorServico;
