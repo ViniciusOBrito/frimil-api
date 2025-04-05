@@ -21,7 +21,7 @@ public class Transportador {
     private Long tipoDocumento;
 
     @Column(name = "TPD_DOCUMENTO", nullable = false)
-    private Long documento;
+    private String documento;
 
     @Column(name = "TPD_NOME", nullable = false)
     private String nome;
@@ -33,7 +33,7 @@ public class Transportador {
     private String endereco;
 
     @Column(name = "TPD_TELEFONE")
-    private Long telefone;
+    private String telefone;
 
     @OneToMany(mappedBy = "transportador", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Veiculo> veiculos;
