@@ -36,7 +36,7 @@ public class PesadorGadoServico {
 
     public PesadorGadoDTO atualizar(PesadorGadoDTO pesadorGadoDTO, Long id) {
         PesadorGado pesadorGado = this.findOrThrow(id);
-        BeanUtils.copyProperties(pesadorGadoDTO, pesadorGado);
+        BeanUtils.copyProperties(pesadorGadoDTO, pesadorGado, "id");
 
         pesadorGado = pesadorGadoRepositorio.save(pesadorGado);
         return new PesadorGadoDTO(pesadorGado);

@@ -30,12 +30,12 @@ public class PesadorGadoController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<PesadorGadoDTO> atualizar(@RequestBody PesadorGadoDTO pesadorGadoDTO, Long id) {
+    public ResponseEntity<PesadorGadoDTO> atualizar(@RequestBody PesadorGadoDTO pesadorGadoDTO,@PathVariable Long id) {
         return ResponseEntity.ok(pesadorGadoServico.atualizar(pesadorGadoDTO, id));
     }
 
-    @DeleteMapping
-    public ResponseEntity<PesadorGadoDTO> excluir(Long id) {
+    @DeleteMapping("/{id}")
+    public ResponseEntity<PesadorGadoDTO> excluir(@PathVariable Long id) {
         this.pesadorGadoServico.excluir(id);
         return ResponseEntity.noContent().build();
     }

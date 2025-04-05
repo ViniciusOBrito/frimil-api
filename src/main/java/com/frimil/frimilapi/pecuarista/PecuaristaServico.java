@@ -1,5 +1,6 @@
 package com.frimil.frimilapi.pecuarista;
 
+import com.frimil.frimilapi.comum.excecoes.InvalidDataException;
 import com.frimil.frimilapi.fazenda.Fazenda;
 import com.frimil.frimilapi.fazenda.FazendaDTO;
 import com.frimil.frimilapi.fazenda.FazendaServico;
@@ -91,7 +92,7 @@ public class PecuaristaServico {
 
     public void validarEntrada(PecuaristaDTO pecuaristaDTO) {
         if (pecuaristaDTO.fazendas().isEmpty()) {
-            throw new RuntimeException("erro ao atualizar");
+            throw new InvalidDataException("Deve conter pelo menos uma fazenda vinculada ao pecuarista!");
         }
     }
 
