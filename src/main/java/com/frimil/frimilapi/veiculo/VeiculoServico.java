@@ -1,5 +1,6 @@
 package com.frimil.frimilapi.veiculo;
 
+import com.frimil.frimilapi.fazenda.Fazenda;
 import com.frimil.frimilapi.transportador.Transportador;
 import com.frimil.frimilapi.transportador.TransportadorServico;
 import lombok.AllArgsConstructor;
@@ -14,7 +15,10 @@ import java.util.stream.Collectors;
 public class VeiculoServico {
 
     private final VeiculoRepositorio veiculoRepositorio;
-    private final TransportadorServico transportadorServico;
+
+    public Veiculo salvar(Veiculo veiculo){
+        return veiculoRepositorio.save(veiculo);
+    }
 
     public List<VeiculoDTO> listar() {
         return veiculoRepositorio.findAll()
@@ -23,14 +27,6 @@ public class VeiculoServico {
                 .collect(Collectors.toList());
     }
 
-    public List<VeiculoDTO> listarPorTransportador(Long idTransportador) {
-        Transportador transportador = transportadorServico.findOrThrow(idTransportador);
-
-        return veiculoRepositorio.findAllByTransportador(transportador)
-                .stream()
-                .map(VeiculoDTO::new)
-                .collect(Collectors.toList());
-    }
 
     public VeiculoDTO atualizar(VeiculoDTO veiculoDTO, Long id) {
         Veiculo veiculo = findOrThrow(id);
