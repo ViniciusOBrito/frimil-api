@@ -1,13 +1,10 @@
 package com.frimil.frimilapi.transportador;
 
-import com.frimil.frimilapi.fazenda.Fazenda;
-import com.frimil.frimilapi.fazenda.FazendaDTO;
-import com.frimil.frimilapi.pecuarista.Pecuarista;
+
 import com.frimil.frimilapi.veiculo.Veiculo;
 import com.frimil.frimilapi.veiculo.VeiculoDTO;
 import com.frimil.frimilapi.veiculo.VeiculoServico;
 import lombok.AllArgsConstructor;
-import org.hibernate.ObjectNotFoundException;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
 

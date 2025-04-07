@@ -1,8 +1,6 @@
 package com.frimil.frimilapi.veiculo;
 
-import com.frimil.frimilapi.fazenda.Fazenda;
-import com.frimil.frimilapi.transportador.Transportador;
-import com.frimil.frimilapi.transportador.TransportadorServico;
+
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
