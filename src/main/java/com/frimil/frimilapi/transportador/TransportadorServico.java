@@ -1,6 +1,7 @@
 package com.frimil.frimilapi.transportador;
 
 
+import com.frimil.frimilapi.comum.excecoes.ResourceNotFoundException;
 import com.frimil.frimilapi.veiculo.Veiculo;
 import com.frimil.frimilapi.veiculo.VeiculoDTO;
 import com.frimil.frimilapi.veiculo.VeiculoServico;
@@ -106,6 +107,6 @@ public class TransportadorServico {
 
     public Transportador findOrThrow(Long id) {
         return transportadorRepositorio.findById(id)
-                .orElseThrow(() -> new RuntimeException("Erro"));
+                .orElseThrow(() -> new ResourceNotFoundException("Não foi encontrado nenhum Transportador com o ID: " + id));
     }
 }

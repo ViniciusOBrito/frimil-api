@@ -1,7 +1,6 @@
 package com.frimil.frimilapi.fazenda;
 
-import com.frimil.frimilapi.pecuarista.Pecuarista;
-import com.frimil.frimilapi.pecuarista.PecuaristaServico;
+import com.frimil.frimilapi.comum.excecoes.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -42,6 +41,6 @@ public class FazendaServico {
 
     public Fazenda findOrThrow(Long id) {
         return fazendaRepositorio.findById(id)
-                .orElseThrow(() -> new RuntimeException("Erro"));
+                .orElseThrow(() -> new ResourceNotFoundException("Não foi encontrador nenhuma fazenda com o ID: " + id));
     }
 }
