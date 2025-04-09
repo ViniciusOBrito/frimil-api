@@ -1,5 +1,6 @@
 package com.frimil.frimilapi.pesadorgado;
 
+import com.frimil.frimilapi.comum.excecoes.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -49,6 +50,6 @@ public class PesadorGadoServico {
 
     public PesadorGado findOrThrow(Long id) {
         return pesadorGadoRepositorio.findById(id)
-                .orElseThrow(() -> new RuntimeException("Erro"));
+                .orElseThrow(() -> new ResourceNotFoundException("Não foi encontrador nenhum pesador de gado com o ID: " + id));
     }
 }

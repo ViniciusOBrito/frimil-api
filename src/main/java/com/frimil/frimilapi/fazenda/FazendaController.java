@@ -1,6 +1,5 @@
 package com.frimil.frimilapi.fazenda;
 
-import com.frimil.frimilapi.veiculo.VeiculoDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +23,7 @@ public class FazendaController {
         return ResponseEntity.ok(fazendaServico.listar());
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Void> excluir(@PathVariable Long id) {
         fazendaServico.excluir(id);
         return ResponseEntity.noContent().build();

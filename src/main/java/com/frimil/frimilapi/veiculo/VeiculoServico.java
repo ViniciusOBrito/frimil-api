@@ -1,7 +1,7 @@
 package com.frimil.frimilapi.veiculo;
 
-import com.frimil.frimilapi.transportador.Transportador;
-import com.frimil.frimilapi.transportador.TransportadorServico;
+
+import com.frimil.frimilapi.comum.excecoes.ResourceNotFoundException;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
@@ -14,7 +14,10 @@ import java.util.stream.Collectors;
 public class VeiculoServico {
 
     private final VeiculoRepositorio veiculoRepositorio;
-    private final TransportadorServico transportadorServico;
+
+    public Veiculo salvar(Veiculo veiculo){
+        return veiculoRepositorio.save(veiculo);
+    }
 
     public List<VeiculoDTO> listar() {
         return veiculoRepositorio.findAll()
@@ -23,14 +26,6 @@ public class VeiculoServico {
                 .collect(Collectors.toList());
     }
 
-    public List<VeiculoDTO> listarPorTransportador(Long idTransportador) {
-        Transportador transportador = transportadorServico.findOrThrow(idTransportador);
-
-        return veiculoRepositorio.findAllByTransportador(transportador)
-                .stream()
-                .map(VeiculoDTO::new)
-                .collect(Collectors.toList());
-    }
 
     public VeiculoDTO atualizar(VeiculoDTO veiculoDTO, Long id) {
         Veiculo veiculo = findOrThrow(id);
@@ -48,6 +43,6 @@ public class VeiculoServico {
 
     public Veiculo findOrThrow(Long id) {
         return veiculoRepositorio.findById(id)
-                .orElseThrow(() -> new RuntimeException("Erro"));
+                .orElseThrow(() -> new ResourceNotFoundException("Não foi encontrador nenhum veiculo com o ID: " + id));
     }
 }

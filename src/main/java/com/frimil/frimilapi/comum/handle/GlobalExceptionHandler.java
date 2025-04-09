@@ -1,4 +1,4 @@
-package com.frimil.frimilapi.comum.excecoes.handle;
+package com.frimil.frimilapi.comum.handle;
 
 import com.frimil.frimilapi.comum.excecoes.FrimilException;
 import org.springframework.http.HttpStatus;

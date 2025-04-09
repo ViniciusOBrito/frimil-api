@@ -18,11 +18,6 @@ public class VeiculoController {
         return ResponseEntity.ok(veiculoServico.atualizar(veiculoDTO, id));
     }
 
-    @GetMapping("/{idTransportador}")
-    public ResponseEntity<List<VeiculoDTO>> listarPorTransportador(@PathVariable Long idTransportador) {
-        return ResponseEntity.ok(veiculoServico.listarPorTransportador(idTransportador));
-    }
-
     @GetMapping()
     public ResponseEntity<List<VeiculoDTO>> listar() {
         return ResponseEntity.ok(this.veiculoServico.listar());
