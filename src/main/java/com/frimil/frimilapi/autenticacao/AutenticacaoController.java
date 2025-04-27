@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/autenticacao")
 @AllArgsConstructor
-public class AutenticacaoController {
+public class AutenticacaoController implements AutenticacaoRecurso {
 
     private final AutenticacaoServico autenticacaoServico;
 

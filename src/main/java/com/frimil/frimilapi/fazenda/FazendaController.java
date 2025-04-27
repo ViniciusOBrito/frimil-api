@@ -9,7 +9,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/fazenda")
-public class FazendaController {
+public class FazendaController implements FazendaRecurso{
 
     private final FazendaServico fazendaServico;
 

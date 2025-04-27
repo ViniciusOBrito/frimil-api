@@ -1,7 +1,6 @@
 package com.frimil.frimilapi.transportador;
 
 
-import com.frimil.frimilapi.pesadorgado.PesadorGadoDTO;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,7 +10,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/transportador")
-public class TransportadorController {
+public class TransportadorController implements TransportadorResource{
 
     private final TransportadorServico transportadorServico;
 

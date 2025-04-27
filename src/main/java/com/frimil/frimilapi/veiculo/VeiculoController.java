@@ -9,7 +9,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/veiculo")
-public class VeiculoController {
+public class VeiculoController implements VeiculoRecurso {
 
     private final VeiculoServico veiculoServico;
 

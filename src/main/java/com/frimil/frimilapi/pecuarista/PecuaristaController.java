@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/pecuarista")
-public class PecuaristaController {
+public class PecuaristaController implements PecuaristaRecurso {
 
     private final PecuaristaServico pecuaristaServico;
 

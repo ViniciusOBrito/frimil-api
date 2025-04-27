@@ -10,7 +10,7 @@ import java.util.List;
 @RestController
 @AllArgsConstructor
 @RequestMapping("/pesador-gado")
-public class PesadorGadoController {
+public class PesadorGadoController implements PesadorGadoRecurso {
 
     private final PesadorGadoServico pesadorGadoServico;
 
@@ -35,7 +35,7 @@ public class PesadorGadoController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<PesadorGadoDTO> excluir(@PathVariable Long id) {
+    public ResponseEntity<Void> excluir(@PathVariable Long id) {
         this.pesadorGadoServico.excluir(id);
         return ResponseEntity.noContent().build();
     }
